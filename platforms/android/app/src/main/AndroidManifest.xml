@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<manifest android:hardwareAccelerated="true" android:versionCode="10000" android:versionName="1.0.0" package="mapp.cordova.cep" xmlns:android="http://schemas.android.com/apk/res/android">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true" />
+    <application android:hardwareAccelerated="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="com.mapp.cordova.plugin.MappApp" android:supportsRtl="true">
+        <activity android:launchMode="singleInstance" android:name="MainActivity">
+            <intent-filter android:label="@string/launcher_name">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.mapp.cordova.plugin.ActivityListener" android:theme="@android:style/Theme.NoDisplay">
+            <category android:name="android.intent.category.DEFAULT" />
+            <action android:name="com.mapp.RICH_PUSH" />
+            <action android:name="android.intent.action.VIEW" />
+            <action android:name="com.appoxee.VIEW_CUSTOM_LINKS" />
+            <action android:name="com.appoxee.VIEW_INBOX" />
+            <action android:name="com.appoxee.VIEW_DEEPLINK" />
+            <category android:name="${applicationId}" />
+        </activity>
+        <receiver android:enabled="true" android:exported="false" android:name="com.mapp.cordova.plugin.MappPushListener">
+            <intent-filter>
+                <action android:name="com.appoxee.PUSH_OPENED" />
+                <action android:name="com.appoxee.PUSH_RECEIVED" />
+                <action android:name="com.appoxee.PUSH_DISMISSED" />
+                <action android:name="com.appoxee.BUTTON_CLICKED" />
+                <category android:name="${applicationId}" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </receiver>
+    </application>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+</manifest>

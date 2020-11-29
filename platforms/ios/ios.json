@@ -1,0 +1,115 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"SQLitePlugin\"><param name=\"ios-package\" value=\"SQLitePlugin\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"MappPlugin\"><param name=\"ios-package\" value=\"MappPlugin\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "*-Info.plist": {
+        "parents": {
+          "CFBundleURLTypes": [
+            {
+              "xml": "<array><dict><key>NSLocationAlwaysAndWhenInUseUsageDescription</key><string>Provide your location to our SDK</string><key>NSLocationAlwaysUsageDescription</key><string>Provide your location to our SDK</string><key>NSLocationUsageDescription</key><string>Provide your location to our SDK</string><key>NSLocationWhenInUseUsageDescription</key><string>Provide your location to our SDK</string></dict></array>",
+              "count": 1
+            }
+          ],
+          "/*": [],
+          "NSLocationAlwaysAndWhenInUseUsageDescription": [
+            {
+              "xml": "<string>Provide your location to our SDK</string>",
+              "count": 1
+            }
+          ],
+          "NSLocationAlwaysUsageDescription": [
+            {
+              "xml": "<string>Provide your location to our SDK</string>",
+              "count": 1
+            }
+          ],
+          "NSLocationUsageDescription": [
+            {
+              "xml": "<string>Provide your location to our SDK</string>",
+              "count": 1
+            }
+          ],
+          "NSLocationWhenInUseUsageDescription": [
+            {
+              "xml": "<string>Provide your location to our SDK</string>",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "mapp.cordova.cep"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "mapp.cordova.cep"
+    },
+    "cordova-sqlite-storage": {
+      "PACKAGE_NAME": "mapp.cordova.cep"
+    },
+    "cordova-android-support-gradle-release": {
+      "PACKAGE_NAME": "mapp.cordova.cep"
+    },
+    "cordova-mapp-plugin": {
+      "APX_OPEN_URL_INTERNAL": "yes",
+      "PACKAGE_NAME": "mapp.cordova.cep"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "cordova-plugin-device.device",
+      "file": "plugins/cordova-plugin-device/www/device.js",
+      "pluginId": "cordova-plugin-device",
+      "clobbers": [
+        "device"
+      ]
+    },
+    {
+      "id": "cordova-sqlite-storage.SQLitePlugin",
+      "file": "plugins/cordova-sqlite-storage/www/SQLitePlugin.js",
+      "pluginId": "cordova-sqlite-storage",
+      "clobbers": [
+        "SQLitePlugin"
+      ]
+    },
+    {
+      "id": "cordova-mapp-plugin.MappPlugin",
+      "file": "plugins/cordova-mapp-plugin/www/MappPlugin.js",
+      "pluginId": "cordova-mapp-plugin",
+      "clobbers": [
+        "MappPlugin"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-whitelist": "1.3.3",
+    "cordova-plugin-device": "2.0.2",
+    "cordova-sqlite-storage": "5.1.0",
+    "cordova-android-support-gradle-release": "3.0.1",
+    "cordova-mapp-plugin": "0.0.1"
+  }
+}
